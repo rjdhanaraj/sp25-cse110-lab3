@@ -1,0 +1,224 @@
+/* =======================================
+   🌟 GENERAL STYLING + COMMENTS
+======================================= */
+
+/* This is the main wrapper of the page */
+#content-wrapper {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* =======================================
+     🎨 COLORS (all formats + fallback vars)
+  ======================================= */
+  
+  :root {
+    --main-color: #3498db;
+    --fallback-color: orange;
+    --accent-color: rgb(255, 105, 180); /* pink */
+  }
+  
+  body {
+    color: var(--fallback-color);
+    background: linear-gradient(to bottom, #fff, hsl(210, 100%, 98%));
+  }
+  
+  /* Using color hex, rgb, hsl */
+  h1 {
+    color: #333;
+  }
+  h2 {
+    color: rgba(52, 152, 219, 0.9);
+  }
+  h3 {
+    color: hsl(120, 80%, 30%);
+  }
+  
+  /* Background color */
+  section {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--main-color);
+  }
+  
+  /* Fallback */
+  @supports not (color: var(--main-color)) {
+    body {
+      color: orange;
+    }
+  }
+  
+  /* =======================================
+     📏 UNITS (relative + absolute)
+  ======================================= */
+  
+  p {
+    font-size: 1.2rem;       /* relative */
+    margin-bottom: 24px;     /* absolute */
+    line-height: 1.6em;      /* relative */
+    max-width: 700px;        /* absolute */
+  }
+  
+  /* =======================================
+     📦 BOX MODEL: margin, padding, border
+  ======================================= */
+  
+  ul {
+    margin: 10px 15px 20px 25px;        /* shorthand margin */
+    padding: 5px 10px 15px 20px;        /* shorthand padding */
+    border: 2px solid #aaa;             /* borders */
+    border-radius: 10px;
+  }
+  
+  /* Longhand margin */
+  nav {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* =======================================
+     🖊️ TEXT
+  ======================================= */
+  
+  strong {
+    color: var(--main-color);
+    text-decoration: underline;
+    text-align: center;
+  }
+  
+  /* =======================================
+     🧱 DISPLAY, SIZING, POSITIONING
+  ======================================= */
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  /* Position examples */
+  footer {
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav {
+    position: sticky;
+    top: 0;
+  }
+  
+  /* =======================================
+     ⚡ PSEUDO-CLASSES
+  ======================================= */
+  
+  a:hover {
+    color: #e74c3c;
+  }
+  a:active {
+    color: #8e44ad;
+  }
+  
+  /* =======================================
+     📐 FLEXBOX + GRID
+  ======================================= */
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+  }
+  
+  /* =======================================
+     📱 RESPONSIVENESS
+  ======================================= */
+  
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.9rem;
+      background-color: #f0f8ff;
+    }
+  
+    video {
+      width: 100%;
+    }
+  }
+  
+  /* =======================================
+     🖋️ FONTS
+  ======================================= */
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* =======================================
+     🎯 CSS SELECTORS (All required)
+  ======================================= */
+  
+  /* Class selector */
+  .attendance {
+    background-color: #fff7e6;
+  }
+  
+  /* ID selector */
+  #Form {
+    background-color: #f0f0ff;
+  }
+  
+  /* Universal selector */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Element selector */
+  section {
+    border-left: 5px solid #3498db;
+  }
+  
+  /* Attribute selector */
+  input[type="text"] {
+    border: 1px solid #ccc;
+  }
+  
+  /* Selector list */
+  h1, h2, h3 {
+    font-weight: bold;
+  }
+  
+  /* Combinators */
+  nav > ul {
+    background-color: #fefefe;
+  }
+  nav li + li {
+    margin-top: 4px;
+  }
+  
+  /* New Selectors */
+  section:has(img) {
+    border: 2px dashed #e67e22;
+  }
+  
+  /* Nested Selector */
+  nav ul li a {
+    font-style: italic;
+  }
